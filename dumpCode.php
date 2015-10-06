@@ -35,6 +35,8 @@
 		$sim3 = new sim ( randomColor(), randomCar(), $track);}
 		
 		
+		<img src="<?php echo file_dir . '/' . $redColor; ?>" height="100" width="100"/>
+		
 		
 		?>
 		

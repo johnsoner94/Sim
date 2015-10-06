@@ -175,7 +175,9 @@
 	?>
 
 	<h1>Results</h1>
-
+		<table>
+			<tr>
+	<td>
 	<ul>
 		<?php
 		if ($livePlayer == "first") {
@@ -216,6 +218,23 @@
 		}
 		?>
 	</ul>
+</td>
+				<td>
+		<?php
+		// This PHP displays a picture of a car that you are driving.
+		if ($color == "red") {
+			echo '<img src="redCar.gif" alt="Red Car">';
+		} else if ($color == "blue") {
+			echo '<img src="blueCar.gif" alt="Blue Car">';
+		} else if ($color == "black") {
+			echo '<img src="blackCar.gif" alt="Black Car">';
+		} else if ($color == "white") {
+			echo '<img src="whiteCar.gif" alt="White Car">';
+		}
+		?>
+	</td>
+</tr>
+</table>
 
 	<form id="resumeInput" action="playerInput.php" method="post">
 		<input id="submitButton" name="doneButton" value="Race Again!" type="submit">
