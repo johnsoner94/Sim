@@ -158,37 +158,20 @@
         	return $simColor;
 		}
 		
-		class sim {
-			public $color;
-			public $car;
-			public $track;
-			
-			function __construct ($co, $ca, $t ) {
-			        $this->color = $co;
-			        $this->car = $ca;
-					$this->track = $t;
-			    }
-		}
-		
 		// Sets Live Players position
-		$livePlayer = place($car, $track, $color);
-		while ($sim1 == $sim2 || $sim1 == $sim3 || $sim1 == $livePlayer ||
-				$sim2 == $livePlayer || $sim2 == $sim3 || $sim3 == $livePlayer) { // check to make sure all cases are here
-			$sim1 = place(randomCar(), $track, randomColor());
-			$sim2 = place(randomCar(), $track, randomColor());
-			$sim3 = place(randomCar(), $track, randomColor());
-		}
-		// Generates Sims to race against
-		$sim1 = new sim ( randomColor(), randomCar(), $track);
-		//$sim1 = place(randomCar(), $track, randomColor());
-		$sim2 = place(randomCar(), $track, randomColor());
-		$sim3 = place(randomCar(), $track, randomColor());
+				$livePlayer = place($car, $track, $color);
+				// Generates Sims to race against
+				$sim1 = place(randomCar(), $track, randomColor());
+				$sim2 = place(randomCar(), $track, randomColor());
+				$sim3 = place(randomCar(), $track, randomColor());
+				while ($sim1 == $sim2 || $sim1 == $sim3 || $sim1 == $livePlayer) {
+					$sim1 = place(randomCar(), $track, randomColor());}
+				while ($sim2 == $sim1 || $sim2 == $sim3 || $sim2 == $livePlayer) {
+					$sim2 = place(randomCar(), $track, randomColor());}
+				while ($sim3 == $sim1 || $sim3 == $sim2 || $sim3 == $livePlayer) {
+					$sim3 = place(randomCar(), $track, randomColor());
+				}
 
-		
-		
-		
-		//$sim1->color = "black";
-		//echo "$sim1: $color\n";
 	?>
 
 	<h1>Results</h1>
@@ -196,40 +179,40 @@
 	<ul>
 		<?php
 		if ($livePlayer == "first") {
-			echo "<li> First Place: " . $name . " with a " . $color . " " . $car . " on " . $track . "</li>";
+			echo "<li> First Place: " . $name . "</li>";
 		} else if ($sim1 == "first") {
-			echo "<li> First Place: Player 2 with a " . $sim1.$color . " " . $car . " on " . $track . "</li>";
+			echo "<li> First Place: Player 2</li>";
 		} else if ($sim2 == "first") {
-			echo "<li> First Place: Player 3 with a " . $color . " " . $car . " on " . $track . "</li>";
+			echo "<li> First Place: Player 3</li>";
 		} else if ($sim3 == "first") {
-			echo "<li> First Place: Player 4 with a " . $color . " " . $car . " on " . $track . "</li>";
+			echo "<li> First Place: Player 4</li>";
 		}
 		if ($livePlayer == "second") {
-			echo "<li> Second Place: " . $name . " with a " . $color . " " . $car . " on " . $track . "</li>";
+			echo "<li> Second Place: " . $name . "</li>";
 		} else if ($sim1 == "second") {
-			echo "<li> Second Place: Player 2 with a " . $color . " " . $car . " on " . $track . "</li>";
-		} else if ($sim2 == "Second") {
-			echo "<li> Second Place: Player 3 with a " . $color . " " . $car . " on " . $track . "</li>";
+			echo "<li> Second Place: Player 2</li>";
+		} else if ($sim2 == "second") {
+			echo "<li> Second Place: Player 3</li>";
 		} else if ($sim3 == "second") {
-			echo "<li> Second Place: Player 4 with a " . $color . " " . $car . " on " . $track . "</li>";
+			echo "<li> Second Place: Player 4</li>";
 		}
 		if ($livePlayer == "third") {
-			echo "<li> Third Place: " . $name . " with a " . $color . " " . $car . " on " . $track . "</li>";
+			echo "<li> Third Place: " . $name . "</li>";
 		} else if ($sim1 == "third") {
-			echo "<li> Third Place: Player 2 with a " . $color . " " . $car . " on " . $track . "</li>";
+			echo "<li> Third Place: Player 2</li>";
 		} else if ($sim2 == "third") {
-			echo "<li> Third Place: Player 3 with a " . $color . " " . $car . " on " . $track . "</li>";
+			echo "<li> Third Place: Player 3</li>";
 		} else if ($sim3 == "third") {
-			echo "<li> Third Place: Player 4 with a " . $color . " " . $car . " on " . $track . "</li>";
+			echo "<li> Third Place: Player 4</li>";
 		}
 		if ($livePlayer == "null") {
-			echo "<li>" . $name . " with a " . $color . " " . $car . " on " . $track . " was not in the top Three.</li>";
+			echo "<li>Loser: " . $name . "</li>";
 		} else if ($sim1 == "null") {
-			echo "<li>Player 2  with a " . $color . " " . $car . " on " . $track . " was not in the top Three.</li>";
+			echo "<li>Loser: Player 2</li>";
 		} else if ($sim2 == "null") {
-			echo "<li>Player 3  with a " . $color . " " . $car . " on " . $track . " was not in the top Three.</li>";
+			echo "<li>Loser: Player 3</li>";
 		} else if ($sim3 == "null") {
-			echo "<li>Player 4  with a " . $color . " " . $car . " on " . $track . " was not in the top Three.</li>";
+			echo "<li>Loser: Player 4</li>";
 		}
 		?>
 	</ul>
@@ -238,7 +221,7 @@
 		<input id="submitButton" name="doneButton" value="Race Again!" type="submit">
 	</form>
 	<br />
-	<form id="closing" action="closing.html" method="post">
+	<form id="closing" action="done.html" method="post">
 		<input id="doneButton" name="doneButton" value="I'm done!" type="submit">
 	</form>
 </div>

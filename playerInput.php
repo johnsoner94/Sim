@@ -79,13 +79,12 @@
 
 		<h2>Choose Your Options</h2>
 		<p>Required Field *</p>
-		<p>
 			<label for="racer">Racer's Name:</label> 
 			<input id="name" name="name" value="<?php if(isset($_SESSION['name'])) { echo $_SESSION['name']; } ?>" type="text" />
 			*		
-		</p>
+			<br /><br />
 
-		<p>
+		
 			Pick your car:
 			<select name="car">
 			  <option value="">Select...</option>
@@ -93,9 +92,9 @@
 			  <option value="pagani">Pagani</option>
 			  <option value="lamborghini">Lamborghini</option>
 			</select> *
-		</p>
+		<br /><br />
 
-		<p>
+		
 			Pick your color:
 			<select name="color">
 			  <option value="">Select...</option>
@@ -104,18 +103,17 @@
 			  <option value="white">White</option>
 			  <option value="black">Black</option>
 			</select>*
-		</p>
+		<br /><br />
 
-		<p>
+	
 			Pick the track:
 			<select name="track">
 			  <option value="">Select...</option>
 			  <option value="track1" name="track_1">Track 1</option>
 			  <option value="track2" name="track_2">Track 2</option>
 			  <option value="track3" name="track_3">Track 3</option>
-			  <option value="track4" name="track_4">Track 4</option>
 			</select> *
-		</p> 
+		<br />
 	</div>
 	<div id="submit">
 		<p>
