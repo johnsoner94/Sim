@@ -34,6 +34,7 @@
 		   
 		   return $errorMessages;
 		}
+		
 		function setSessionVariables(){
 			$_SESSION['name'] 	= $_POST['name'];
 			$_SESSION['car'] 	= $_POST['car'];
